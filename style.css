@@ -1,0 +1,46 @@
+/* -----Mobile tablet and computer screen size----- */
+/* mobile: 480px;
+tablet: 768px;
+desktop: 1440px */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    font-size: 25px;
+    padding: 4vh;
+}
+
+.container {
+    height: calc(100vh - 4vh*2);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 4vh;
+}
+
+[class^="box-"] {
+    display: grid;
+    /* justify-content: center;
+    align-content: center; */
+    place-content: center;
+
+    background-color: #c1c1c1;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    [class^="box-"]{
+        height: 200px;
+    }
+}
